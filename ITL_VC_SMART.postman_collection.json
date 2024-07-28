@@ -1,0 +1,484 @@
+{
+	"info": {
+		"_postman_id": "c370d73f-0100-470d-99ba-2cb06e8b5f57",
+		"name": "ITL_VC_SMART",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29508073",
+		"_collection_link": "https://speeding-resonance-716623.postman.co/workspace/API_AUTOMATION_2025~f1cf5e56-60ec-45af-9dfd-a09579f084fe/collection/29508073-c370d73f-0100-470d-99ba-2cb06e8b5f57?action=share&source=collection_link&creator=29508073"
+	},
+	"item": [
+		{
+			"name": "API_01_Authentication",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "origin",
+						"value": "https://vcsmart.tmsitrimble.in",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"applicationId\":1,\"userName\":\"hqlogpack\",\"password\":\"Password@123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ENV_itl_vcsmart}}/VCSmart/login/post/json/userAuthentication",
+					"host": [
+						"{{ENV_itl_vcsmart}}"
+					],
+					"path": [
+						"VCSmart",
+						"login",
+						"post",
+						"json",
+						"userAuthentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API_02_UserMenuMapping",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "nhKsSuxywQJb/5d+K+lENPJCrNNrEeCvKTfUQbDl/jbu/C9efjUje/twcpozhApCGn5G56pITLh9/EBs+ispDYosLCl8aGcSEr25lPLjzR60CQ0iQ9w8aXEZBYs6g+iGBltw09xslMvGCJkWh5s2OL1zf6Ec7uO587lelG7IrsbllREEWpbIhPR+oeUbF2oBq6D2yNckp+9aQ+cphcA4vfn6kG79dPKX8Ul6XK2Tf0dA6XJspZmKY0RAWlbM3Csjyn5jg4/usEoM/qhXS8tfhZUwGMUfsnvWkpp7bEtaheL6SB394GKQ7hFOnSOER0wwn8A9FPUNhLmMY3dqtAFfOA==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://vcsmart.tmsitrimble.in",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":7339}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vcsmart.tmsitrimble.in/VCSmart/menuMapping/post/json/getUserMenuMapping",
+					"protocol": "https",
+					"host": [
+						"vcsmart",
+						"tmsitrimble",
+						"in"
+					],
+					"path": [
+						"VCSmart",
+						"menuMapping",
+						"post",
+						"json",
+						"getUserMenuMapping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API_03_getUserConsigners",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "nhKsSuxywQJb/5d+K+lENPJCrNNrEeCvKTfUQbDl/jbu/C9efjUje/twcpozhApCGn5G56pITLh9/EBs+ispDYosLCl8aGcSEr25lPLjzR60CQ0iQ9w8aXEZBYs6g+iGiw+t6vUkUVK9JEd0dfJ8vI2J6IYVUqzEWtN3j2wiLP/wO4UH6N4Ehfr7pNCmQyNIQyo3hf3Ft8APP4btnDbk1d8gQVDFUvl1JM4xENqwwwBjiAC2yCkhFjgMiIjjP6cWn9s+sKBtnhxF7quCUzACii+blXN2xye8+tCwsH+LdwUfB/wOUfveT2eTSKfrJsWfQeKCkJZDBdYzR9qWfxCI3w==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "{{ENV_itl_vcsmart}}",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer Token",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"accountId\" :135,\"userId\" : 7339}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ENV_itl_vcsmart}}/VCSmart/masters/post/json/getUserConsigners",
+					"host": [
+						"{{ENV_itl_vcsmart}}"
+					],
+					"path": [
+						"VCSmart",
+						"masters",
+						"post",
+						"json",
+						"getUserConsigners"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API_04_getRecentlyDeliveredTripsCountDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "nhKsSuxywQJb/5d+K+lENPJCrNNrEeCvKTfUQbDl/jbu/C9efjUje/twcpozhApCGn5G56pITLh9/EBs+ispDYosLCl8aGcSEr25lPLjzR60CQ0iQ9w8aXEZBYs6g+iGiw+t6vUkUVK9JEd0dfJ8vI2J6IYVUqzEWtN3j2wiLP/wO4UH6N4Ehfr7pNCmQyNIQyo3hf3Ft8APP4btnDbk1d8gQVDFUvl1JM4xENqwwwBjiAC2yCkhFjgMiIjjP6cWn9s+sKBtnhxF7quCUzACii+blXN2xye8+tCwsH+LdwUfB/wOUfveT2eTSKfrJsWfQeKCkJZDBdYzR9qWfxCI3w==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "{{ENV_itl_vcsmart}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":7339,\"fromDate\":null,\"toDate\":null,\"consignerId\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ENV_itl_vcsmart}}/VCSmart/status/post/json/getRecentlyDeliveredTripsCountDetails",
+					"host": [
+						"{{ENV_itl_vcsmart}}"
+					],
+					"path": [
+						"VCSmart",
+						"status",
+						"post",
+						"json",
+						"getRecentlyDeliveredTripsCountDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API_05_getRecentlyDispatchedTripsCountDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "nhKsSuxywQJb/5d+K+lENPJCrNNrEeCvKTfUQbDl/jbu/C9efjUje/twcpozhApCGn5G56pITLh9/EBs+ispDYosLCl8aGcSEr25lPLjzR60CQ0iQ9w8aXEZBYs6g+iGiw+t6vUkUVK9JEd0dfJ8vI2J6IYVUqzEWtN3j2wiLP/wO4UH6N4Ehfr7pNCmQyNIQyo3hf3Ft8APP4btnDbk1d8gQVDFUvl1JM4xENqwwwBjiAC2yCkhFjgMiIjjP6cWn9s+sKBtnhxF7quCUzACii+blXN2xye8+tCwsH+LdwUfB/wOUfveT2eTSKfrJsWfQeKCkJZDBdYzR9qWfxCI3w==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "{{ENV_itl_vcsmart}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":7339,\"fromDate\":null,\"toDate\":null, \"consignerId\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ENV_itl_vcsmart}}/VCSmart/status/post/json/getRecentlyDispatchedTripsCountDetails",
+					"host": [
+						"{{ENV_itl_vcsmart}}"
+					],
+					"path": [
+						"VCSmart",
+						"status",
+						"post",
+						"json",
+						"getRecentlyDispatchedTripsCountDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API_06_getOnTripVehicleSafetyViolationCountDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "nhKsSuxywQJb/5d+K+lENPJCrNNrEeCvKTfUQbDl/jbu/C9efjUje/twcpozhApCGn5G56pITLh9/EBs+ispDYosLCl8aGcSEr25lPLjzR60CQ0iQ9w8aXEZBYs6g+iGiw+t6vUkUVK9JEd0dfJ8vI2J6IYVUqzEWtN3j2wiLP/wO4UH6N4Ehfr7pNCmQyNIQyo3hf3Ft8APP4btnDbk1d8gQVDFUvl1JM4xENqwwwBjiAC2yCkhFjgMiIjjP6cWn9s+sKBtnhxF7quCUzACii+blXN2xye8+tCwsH+LdwUfB/wOUfveT2eTSKfrJsWfQeKCkJZDBdYzR9qWfxCI3w==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "{{ENV_itl_vcsmart}}",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":7339,\"userGroup\" : -1, \"consignerId\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ENV_itl_vcsmart}}/VCSmart/status/post/json/getOnTripVehicleSafetyViolationCountDetails",
+					"host": [
+						"{{ENV_itl_vcsmart}}"
+					],
+					"path": [
+						"VCSmart",
+						"status",
+						"post",
+						"json",
+						"getOnTripVehicleSafetyViolationCountDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API_07_getOnTripVehicleSafetyViolationCountDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "nhKsSuxywQJb/5d+K+lENPJCrNNrEeCvKTfUQbDl/jbu/C9efjUje/twcpozhApCGn5G56pITLh9/EBs+ispDYosLCl8aGcSEr25lPLjzR60CQ0iQ9w8aXEZBYs6g+iGiw+t6vUkUVK9JEd0dfJ8vI2J6IYVUqzEWtN3j2wiLP/wO4UH6N4Ehfr7pNCmQyNIQyo3hf3Ft8APP4btnDbk1d8gQVDFUvl1JM4xENqwwwBjiAC2yCkhFjgMiIjjP6cWn9s+sKBtnhxF7quCUzACii+blXN2xye8+tCwsH+LdwUfB/wOUfveT2eTSKfrJsWfQeKCkJZDBdYzR9qWfxCI3w==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "{{ENV_itl_vcsmart}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":7339,\"userGroup\" : -1, \"consignerId\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ENV_itl_vcsmart}}/VCSmart/status/post/json/getOnTripVehicleSafetyViolationCountDetails",
+					"host": [
+						"{{ENV_itl_vcsmart}}"
+					],
+					"path": [
+						"VCSmart",
+						"status",
+						"post",
+						"json",
+						"getOnTripVehicleSafetyViolationCountDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API_08_getOnTripStatusCounts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "nhKsSuxywQJb/5d+K+lENPJCrNNrEeCvKTfUQbDl/jbu/C9efjUje/twcpozhApCGn5G56pITLh9/EBs+ispDYosLCl8aGcSEr25lPLjzR60CQ0iQ9w8aXEZBYs6g+iGiw+t6vUkUVK9JEd0dfJ8vI2J6IYVUqzEWtN3j2wiLP/wO4UH6N4Ehfr7pNCmQyNIQyo3hf3Ft8APP4btnDbk1d8gQVDFUvl1JM4xENqwwwBjiAC2yCkhFjgMiIjjP6cWn9s+sKBtnhxF7quCUzACii+blXN2xye8+tCwsH+LdwUfB/wOUfveT2eTSKfrJsWfQeKCkJZDBdYzR9qWfxCI3w==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "{{ENV_itl_vcsmart}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":7339, \"consignerId\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ENV_itl_vcsmart}}/VCSmart/status/post/json/getOnTripStatusCounts",
+					"host": [
+						"{{ENV_itl_vcsmart}}"
+					],
+					"path": [
+						"VCSmart",
+						"status",
+						"post",
+						"json",
+						"getOnTripStatusCounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API_09_getConsignerDetentionCountDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "nhKsSuxywQJb/5d+K+lENPJCrNNrEeCvKTfUQbDl/jbu/C9efjUje/twcpozhApCGn5G56pITLh9/EBs+ispDYosLCl8aGcSEr25lPLjzR60CQ0iQ9w8aXEZBYs6g+iGiw+t6vUkUVK9JEd0dfJ8vI2J6IYVUqzEWtN3j2wiLP/wO4UH6N4Ehfr7pNCmQyNIQyo3hf3Ft8APP4btnDbk1d8gQVDFUvl1JM4xENqwwwBjiAC2yCkhFjgMiIjjP6cWn9s+sKBtnhxF7quCUzACii+blXN2xye8+tCwsH+LdwUfB/wOUfveT2eTSKfrJsWfQeKCkJZDBdYzR9qWfxCI3w==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "{{ENV_itl_vcsmart}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":7339, \"consignerId\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ENV_itl_vcsmart}}/VCSmart/status/post/json/getConsignerDetentionCountDetails",
+					"host": [
+						"{{ENV_itl_vcsmart}}"
+					],
+					"path": [
+						"VCSmart",
+						"status",
+						"post",
+						"json",
+						"getConsignerDetentionCountDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API_10_getDashboardCounts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "nhKsSuxywQJb/5d+K+lENPJCrNNrEeCvKTfUQbDl/jbu/C9efjUje/twcpozhApCGn5G56pITLh9/EBs+ispDYosLCl8aGcSEr25lPLjzR60CQ0iQ9w8aXEZBYs6g+iGm5/Rq9+KGIoCGfsF1EKIyZ8VlBwfgXFIo/0jVMFAz1BDStEdZXiC5IR8P9drEXdr00/0OH7q5xG4VorMh/2nwCZ6k21czUOaM76ZyiCg/Ymn9wZgZBCjs5ANbb7fMBM1/VkWCfW/jn4n1UDKfOeYTsH/xZtmf/KhajD2Gd7tk3hA4R2i7CFDN9akIgYeSqUaBHavUP65z/7txUQakynu5g==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "https://vcsmart.tmsitrimble.in",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":7339,\"consignerId\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vcsmart.tmsitrimble.in/VCSmart/status/post/json/getDashboardCounts",
+					"protocol": "https",
+					"host": [
+						"vcsmart",
+						"tmsitrimble",
+						"in"
+					],
+					"path": [
+						"VCSmart",
+						"status",
+						"post",
+						"json",
+						"getDashboardCounts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
